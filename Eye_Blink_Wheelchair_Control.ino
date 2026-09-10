@@ -1,11 +1,4 @@
-/*
- Eye Blink Based Wheelchair Control
- 1 blink = Forward, 2 = Left, 3 = Right, 4+ = Stop
 
- INTENTIONAL SMALL ISSUE:
- The debounce delay after a blink is too short (100 ms), so
- one physical blink may occasionally be counted more than once.
-*/
 
 #define BLINK_SENSOR_PIN 2
 #define LEFT_IN1 8
@@ -84,7 +77,7 @@ void loop() {
     Serial.println("Blink detected");
 
     // INTENTIONAL ISSUE: debounce delay is too short
-    delay(100);
+    delay(500);
   }
 
   if (blinkCount > 0 &&
